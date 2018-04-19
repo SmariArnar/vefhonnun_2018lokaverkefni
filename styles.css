@@ -1,0 +1,200 @@
+
+#menu-toggle:checked ~ .topnav {
+bottom: 51px;
+}
+#menu-toggle{
+display: none;
+}
+label {
+background-color: lightblue;
+z-index:2;
+cursor: pointer;
+font-size: 1.4em;
+bottom: 0;
+width: 100%;
+height: 50px;
+text-align: center;
+line-height: 51px;
+position: fixed;
+}
+.topnav{
+position: fixed;
+bottom: -160px;
+width: 100%;
+z-index: 1;
+transition: bottom 300ms;
+}
+
+body{ 
+  padding: 17px;
+}
+footer { 
+ border: 2px solid red;
+ padding: 13px;
+}
+picture img{
+  width: 100px;
+}
+body{ 
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:1fr 3fr 1fr 100px;
+  grid-template-areas: "header"
+                       "section"
+                       "footer"
+                        "nav";
+} 
+.topmenu{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; 
+    bottom: -80px; 
+    width: 100%; 
+}
+
+.topnav li{
+  display: block;
+}
+
+.topnav a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.topnav a:hover {
+    background: #ddd;
+    color: black;
+}
+.main {
+    margin-top: 30px; 
+}
+
+.midja{
+  grid-area: midja;
+  background-color: blue;
+ }
+.vinstri{
+  grid-area: vinstri;
+  background-color: green; }
+.haegri{
+  grid-area: haegri;
+  background-color: orange
+ } 
+nav { 
+ grid-area: nav;
+}
+header { 
+ grid-area: header;
+ margin: auto;
+}
+
+section{ 
+   grid-area: section;
+   display: grid;
+   grid-template-rows: 2fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "midja"
+                             "haegri"
+                             "vinstri";
+   background-color: yellow;
+}
+footer { 
+  grid-area: footer;
+  background-color: yellow;
+}
+article,
+aside { 
+  border: 2px solid black;
+  padding: 1em;
+}
+
+
+.media-links a{
+   display: inline-block;
+   border: 1px solid;
+   width: 2.5em;
+   height: 2.5em;
+   text-align: center;
+   margin: 0 1em;
+   line-height: 2.5em;
+   text-decoration: none; 
+   color: white;
+}
+.media-links a:nth-child(1){
+  background-color: lightblue;
+}
+.media-links a:nth-child(2){
+  background-color: pink;
+}
+.media-links a:nth-child(3){
+  background-color: deepskyblue;
+}
+.media-links a:nth-child(4){
+  background-color: tomato;
+}
+@media screen and (min-width: 37.5em){
+
+     body { 
+        grid-template-rows: 100px 1fr 3fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "nav"
+                             "header"
+                             "section"
+                             "footer";
+     }
+     section {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "haegri midja"
+                             "vinstri midja";
+     }
+     .topmenu{
+           display: flex;
+           justify-content: center; 
+     }
+     nav {
+      background-color: black;
+     }
+     nav li{
+      width: 250px;
+     }
+
+     .myndir{
+      flex-flow: row wrap; 
+     }
+     label {
+      display: none;
+     }
+     .topnav{
+      position: static;
+     }
+
+ }
+
+@media screen and (min-width: 48em){
+  section {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: "vinstri midja haegri";
+                          }
+      .myndir{
+      flex-flow: row nowrap; 
+     }
+     .media-links {
+      position: absolute;
+      left: 0;
+      top: 300px;
+     }
+     .media-links a{
+           display: block;
+           margin: 0;
+     }
+}
