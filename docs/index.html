@@ -1,0 +1,243 @@
+<html><head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- þvingar farsíma vafra til að birta gögn 1:1 og þá virka viðmið (breakpoints) í stílsíðum -->
+	<meta charset="utf-8">
+	<title>Verkefni 1</title>
+	<!-- Ykkar stílsnið hér: -->
+	<link rel="stylesheet" type="text/css" href="styles.css"> 
+</head> 
+<body>
+<input type="checkbox" id="menu-toggle">
+	<label for="menu-toggle">Menu</label>
+    <nav class="topnav">
+        <ul class="topmenu">
+        	<li><a >Dagskrá</a></li>
+        	<li><a >Tónlistarmenn</a></li>
+        </ul>
+    </nav>
+	<header>
+		<img src="logo.png" class="logo">
+		<h1 class="morgin">ÚTGÁFUTÓNLEIKASÍÐA</h1>
+		<h3 class="morgin">Upplýsinga og skráningarsíða fyrir útgáfutónleika nýrrar útgáfu Flæði!</h3>
+	</header>
+	<section class="content"> 
+		<article class="midja">
+			<h2 class="morgin"><strong>Um tónleikana</strong></h2>
+
+			<h4 class="morgin">Þann 19.mai, verða haldnir útgáfutónleikar nýs fyrirtækis sem heitir Flæði útgáfufyrirtæki, tónleikarnir verða haldnir í laugardalnum. Fram koma heill skari af tónlistarmönnum og aðeins þeir heitustu í bransanum! Á þessari síðu geturu pantað miða á tónleikana, séð dagskrána, séð lagalista tónlistamanna og skráð þig í aðdáendaklúbb þeirra ásamt almennum upplýsingum um viðburðinn.</h4>
+		<h2 class="morgin">Niðurteljari í tónleika</h2>
+		<p id="demo" class="klukka"></p>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+			<h1 class="morgin" > Dagskrá</h1>
+			<table>
+				<tr>
+				    <th>Tónlistamaður</th>
+				    <th>Svið</th>
+				    <th>Kl</th>
+				</tr>
+				<tr>
+				    <td>Emmsjé önd.</td>
+				    <td>Stóra svið</td>
+				    <td>19:00-20:00</td>
+				</tr>
+				<tr>
+				    <th>Tónlistamaður</th>
+				    <th>Svið</th>
+				    <th>Kl</th>
+				</tr>
+				<tr>
+				    <td>Gó gó ma</td>
+				    <td>litla svið</td>
+				    <td>19:30-20:30</td>
+				</tr>
+				
+				<tr>
+				    <th>Tónlistamaður</th>
+				    <th>Svið</th>
+				    <th>Kl</th>
+				</tr>
+				<tr>
+				    <td>Pétur étur</td>
+				    <td>Stóra svið</td>
+				    <td>20:30-21:30</td>
+				</tr>
+				<tr>
+				    <th>Tónlistamaður</th>
+				    <th>Svið</th>
+				    <th>Kl</th>
+				</tr>
+				<tr>
+				    <td>Teitur er feitur</td>
+				    <td>Litla svið</td>
+				    <td>21:00-22:00</td>
+				</tr>
+				
+				</table>
+<h1 class="morgin">Staðsetning tónleika á korti!</h1>
+<div id="googleMap" style="width:100%;height:400px;"></div>
+<script>
+function myMap() {
+var mapProp= {
+    center:new google.maps.LatLng(5.508742,-0.120850),
+    zoom:5,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var myLatLng = {lat: 64.139357, lng: -21.862803};
+var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+  });
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEda-BiESVcc3iU95HKsBiKCD1euG8IDY&callback=myMap"></script>
+            <picture>
+				<img src="ljosmynd.jpg" alt="lol" style="width: auto;">
+			</picture>
+			<br>
+			<aside class="utfylling">
+			<form class="utfylling">
+			<h3>Útfyllingarform</h3>
+			<p><strong>Vilt þú koma á geggjaða tónleika? Pantaðu miða á útgáfutónleika flæðis hér fyrir neðan! Einstök upplifun í boði.</strong></p>
+			<p>Hvað heitir þú?</p>
+			<input type="name" name="name" required="">
+			<p>Hvað ert þú gamall?</p>
+			<input type="number" size="6" name="age" min="18" max="99" value="21"><br>
+			<p>Sláðu inn dagsetninguna hvenær þú vilt sækja miðana!</p>
+			<input type="date" name="date">
+			<p>Hvað er emailið þitt?</p>
+			<input type="email" name="email" required placeholder="Enter a valid email address" required="">
+			<p>Hvað er símanúmerið þitt?</p>
+			<input type="tel" name="phone-number" minlength="7" required="">
+			<br>
+			<button class="hnappur">Panta</button>
+            </form>
+		</aside>
+
+		</article>
+		<aside class="vinstri" id="#tonlistarmenn">
+			<h3>TÓNLISTARMENN SEM KOMA FRAM! </h3>
+			<ol class="listi">
+					<li>Emmsjé önd</li>
+					<li>Gó gó ma</li>
+					<li>Pétur étur</li>
+					<li>Teitur er feitur</li>>
+			</ol>
+			<div class="kvikun2"><strong class="texti2"><h5>Lagarlistar tónlistarmanna og skráning í aðdáendaklúbba</h5></strong></div>
+			<h3>Emmsjé önd: Lagalisti</h3>
+			<p><strong>Í bænum.</strong></p>
+			<audio controls>
+			  <source src="Sample.mp3" type="audio/mpeg">
+			</audio>
+			<p><strong>Mikil veisla.</strong></p>
+			<audio controls>
+			  <source src="Sample.mp3" type="audio/mpeg">
+			</audio>
+			<aside class="utfylling2">
+			<form >
+			<h3>Skráning í aðdáendklúbb Emmsjé önd.</h3>
+			<p>Hvað heitir þú?</p>
+			<input type="name" name="name" required="">
+			<p>Hvað er emailið þitt?</p>
+			<input type="email" name="email" required placeholder="Enter a valid email address" required="">
+			<button class="hnappur">Skrá sig!</button>
+            </form>
+		    </aside>
+		    <h3>Gó gó ma: Lagalisti</h3>
+			<p><strong>Í bænum.</strong></p>
+			<audio controls>
+			  <source src="Sample.mp3" type="audio/mpeg">
+			</audio>
+			<p><strong>Eldhúsið fagra</strong></p>
+			<audio controls>
+			  <source src="Sample.mp3" type="audio/mpeg">
+			</audio>
+			<aside class="utfylling2">
+			<form >
+			<h3>Skráning í aðdáendklúbb gó go ma.</h3>
+			<p>Hvað heitir þú?</p>
+			<input type="name" name="name" required="">
+			<p>Hvað er emailið þitt?</p>
+			<input type="email" name="email" required placeholder="Enter a valid email address" required="">
+			<button class="hnappur">Skrá sig!</button>
+            </form>
+		    </aside>
+		    
+		
+		</aside>
+		<aside class="haegri">
+			<h3>Pétur étur: Lagalisti</h3>
+			<p><strong>Ét æti þótt vel mæti.</strong></p>
+			<audio controls>
+			  <source src="Sample.mp3" type="audio/mpeg">
+			</audio>
+			<p><strong>Sunnudagsroðinn.</strong></p>
+			<audio controls>
+			  <source src="Sample.mp3" type="audio/mpeg">
+			</audio>
+			<aside class="utfylling2">
+			<form >
+			<h3>Skráning í aðdáendklúbb Péturs éturs.</h3>
+			<p>Hvað heitir þú?</p>
+			<input type="name" name="name" required="">
+			<p>Hvað er emailið þitt?</p>
+			<input type="email" name="email" required placeholder="Enter a valid email address" required="">
+			<button class="hnappur">Skrá sig!</button>
+            </form>
+		    </aside>
+		    <h3>Teitur er feitur: Lagalisti</h3>
+			<p><strong>Sjallarar og hammarar</strong></p>
+			<audio controls>
+			  <source src="Sample.mp3" type="audio/mpeg">
+			</audio>
+			<p><strong>Bsí og kjammarnir</strong></p>
+			<audio controls>
+			  <source src="Sample.mp3" type="audio/mpeg">
+			</audio>
+			<aside class="utfylling2">
+			<form >
+			<h3>Skráning í aðdáendklúbb Teitur er feitur.</h3>
+			<p>Hvað heitir þú?</p>
+			<input type="name" name="name" required="">
+			<p>Hvað er emailið þitt?</p>
+			<input type="email" name="email" required placeholder="Enter a valid email address" required="">
+			<button class="hnappur">Skrá sig!</button>
+            </form>
+		    </aside>
+		</aside>
+	</section>
+	<footer>
+		<div class="kvikun"><h1 class="texti"><strong>KOMDU Á TÓNLEIKA!</strong></h1></div>
+	</footer>
+
+</body></html>
