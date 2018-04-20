@@ -1,5 +1,5 @@
-# vefhonnun_lokaverkefni
-Útgáfufryritækið sem ég hef hannað heitir flæði útgáfufyrirtæki.
+#Vefhonnun lokaverkefni
+Útgáfufyrirtækið sem ég hef hannað heitir flæði útgáfufyrirtæki.
 Flæði sérhæfir sig í rapp og popp tónlist, og eltir hvað fólk finnst 
 skemmtileg tónlist að hverju sinni og aðlagar sig neytandanum.
 Flæði verður með útgáfutónleika þar sem fullt af tónlist verður frumflutt.
