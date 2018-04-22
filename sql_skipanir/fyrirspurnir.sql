@@ -62,8 +62,4 @@ stadur varchar(60),
 flytjandiSalaID int,
 dagsetning varchar(200)
 );
-/*
-select ID, nafn
-from flytjandi
-having ID and flytjandiID = 1;
-*/
+
